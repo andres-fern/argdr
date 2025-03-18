@@ -3,6 +3,11 @@
 *Por Andrés Fernández Apenburg*
 
 *Licenciado en Economía, Universidad de Buenos Aires*
+
+
+### *Actualizaciones*
+*Marzo de 2025: se encuentra disponible **ArgDR v2.0**, una versión 100% automatizada y alojada en Google Cloud Platform. Los archivos de la anterior versión, que corre localmente, se encuentran en la carpeta ArgDR 1.0*
+
 ## Introducción
 Existe una clase de activos financieros llamados ADR (del inglés American Drawing Right). Un ADR es un certificado de titularidad, por parte de un residente estadounidense, de una acción de una empresa cuyas acciones cotizan en un mercado fuera de EEUU. En el caso argentino, se trata de certificados de titularidad de acciones que cotizan en la Bolsa de Comercio de Buenos Aires (BCBA). La compraventa de los ADR argentinos tiene lugar en la Bolsa de Comercio de Nueva York (NYSE) y los valores se expresan en dólares estadounidenses. Existen ADR para múltiples empresas importantes de Argentina, como YPF, Grupo Galicia, e IRSA. 
 
