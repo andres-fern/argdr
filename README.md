@@ -6,7 +6,8 @@
 
 
 ## *Actualizaciones*
-*Marzo de 2025: se encuentra disponible **ArgDR v2.0**, una versión que incluye las siguientes mejoras:*
+### *Marzo de 2025*
+*Se encuentra disponible **ArgDR v2.0**, una versión que incluye las siguientes mejoras:*
 - *Actualización 100% automatizada del cómputo y registro del índice*
 - *Basada en Google Cloud Platform (sin dependencias locales)*
 - *Información de precios de acciones basadas en API (sin dependencias de archivos)*
