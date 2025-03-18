@@ -1,0 +1,7 @@
+requests
+pandas
+matplotlib
+numpy
+python-dotenv
+google-cloud-secret-manager
+google-cloud-bigquery
