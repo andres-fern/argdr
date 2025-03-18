@@ -18,7 +18,7 @@ Las propiedades deseables de un índice incluyen:
 
 ### Definición del índice
 El Índice ArgDR está definido como un promedio ponderado de todos los precios de ADR argentinos, donde los ponderadores sugeridos son la capitalización de mercado de cada firma como porcentaje de la capitalización bursátil colectiva del total de las firmas incluidas. 
-Formalmente, dada una cantidad $N$ de ADR argentinos cotizando en el instante o periodo $t$ (por ejemplo, el inicio o cierre de la jornada, o las 12 del mediodía, o un cierto período sobre el cual se toman valores promedio para todos los activos), el índice queda definido como: 
+Formalmente, dada una cantidad $N$ de empresas argentinas con ADRs cotizando en el instante o periodo $t$ (por ejemplo, el inicio o cierre de la jornada, o las 12 del mediodía, o un cierto período sobre el cual se toman valores promedio para todos los activos), el índice queda definido como: 
 
 $$ 
 ArgDR_{t} = \sum_{i=1}^{N} A_{i, t} \cdot P_{i, t}
