@@ -112,4 +112,4 @@ plt.xticks(fontsize=20, rotation=35)
 plt.grid()
 plt.ylim(filtered_df['Valor'].min() * 0.8, filtered_df['Valor'].max() * 1.06)
 # Save the plot as a .jpeg file
-plt.savefig('Graph and chart outputs\\ArgDR_chart.jpeg', format='jpeg')
+plt.savefig('ArgDR_v2.0\\Graph and chart outputs\\ArgDR_chart.jpeg', format='jpeg')
