@@ -87,12 +87,17 @@ if 'Fecha' in result.columns:
 result.index = pd.to_datetime(result.index)
 filtered_df = filter_dataframe_by_date(result, start_date='2024-01-01')
 
+# Remove duplicates
+filtered_df = filtered_df.drop_duplicates()
+
 # Print the last seven observations of the time series
 print(filtered_df.tail(7))
 
 # Get percentage changes
 value_last_observation = filtered_df.at[filtered_df.index[-1],'Valor']
+print('last:',type(value_last_observation))
 value_next_to_last_observation = filtered_df.at[filtered_df.index[-2],'Valor']
+print('next to last:',type(value_next_to_last_observation))
 value_week_before = filtered_df.at[filtered_df.index[-6],'Valor']
 percentage_change_daily = 100*((value_last_observation/value_next_to_last_observation)-1)
 percentage_change_weekly = 100*((value_last_observation/value_week_before)-1)
