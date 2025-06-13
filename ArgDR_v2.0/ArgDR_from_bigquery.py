@@ -108,16 +108,19 @@ print(f"El ArgDR index varió un {round(percentage_change_daily,3)}% respecto de
 # Make a chart for all values since 2024-01-01
 
 plt.figure(figsize=(24,10))
-plt.plot(filtered_df.index, filtered_df['Valor'], linewidth = 3.5)
+plt.plot(filtered_df.index, filtered_df['Valor'], linewidth = 3.9)
 plt.title('Evolución del ArgDR Index, 2024-25', fontsize=35)
 plt.yticks(fontsize=20)
 
 # Format x-axis with dates
-plt.gca().xaxis.set_major_locator(plt.MultipleLocator(21))  # Set ticks every 21 days
+plt.gca().xaxis.set_major_locator(plt.MultipleLocator(30))  # Set ticks every 30 days
 plt.gcf().autofmt_xdate()  # Auto-format date labels
-plt.xticks(fontsize=20, rotation=35)
+plt.xticks(fontsize=14, rotation=35)
 
-plt.grid()
+# Format grid
+plt.grid(linewidth = 3.2, axis = 'y')
+plt.grid(linewidth = 1, axis = 'x')
+
 plt.ylim(filtered_df['Valor'].min() * 0.8, filtered_df['Valor'].max() * 1.06)
 # Save the plot as a .jpeg file
 plt.savefig('ArgDR_v2.0\\Graph and chart outputs\\ArgDR_chart_since_2024.jpeg', format='jpeg')
@@ -127,7 +130,7 @@ plt.savefig('ArgDR_v2.0\\Graph and chart outputs\\ArgDR_chart_since_2024.jpeg', 
 
 filtered_df_60_latest = filtered_df[-60:]
 plt.figure(figsize=(24,10))
-plt.plot(filtered_df_60_latest.index, filtered_df_60_latest['Valor'], linewidth = 3.5)
+plt.plot(filtered_df_60_latest.index, filtered_df_60_latest['Valor'], linewidth = 6.1)
 plt.title('Evolución del ArgDR Index, últimas 60 jornadas', fontsize=35)
 plt.yticks(fontsize=20)
 
@@ -136,7 +139,11 @@ plt.gca().xaxis.set_major_locator(plt.MultipleLocator(21))  # Set ticks every 21
 plt.gcf().autofmt_xdate()  # Auto-format date labels
 plt.xticks(fontsize=20, rotation=35)
 
-plt.grid()
+# Format grid
+plt.grid(linewidth = 2.5, axis = 'y')
+
 plt.ylim(filtered_df['Valor'].min() * 0.8, filtered_df['Valor'].max() * 1.06)
 # Save the plot as a .jpeg file
 plt.savefig('ArgDR_v2.0\\Graph and chart outputs\\ArgDR_chart_60_latest.jpeg', format='jpeg')
+
+print('Generated all graphs. End of script.')
