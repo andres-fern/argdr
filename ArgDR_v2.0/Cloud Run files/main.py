@@ -48,6 +48,7 @@ def get_data_from_api(ticker, api_key, function='TIME_SERIES_INTRADAY'):
     if response.status_code == 200:
         return response.json()
     else:
+        print(f"No response on ticker: {ticker}")
         return f"Error: {response.status_code}, {response.text}"
 
 def get_date_and_latest_price(ticker, api_key):
@@ -175,6 +176,7 @@ def argdr_index(request):
     df_rows = []
     for ticker in tickers_list:
         date, closing_price = get_date_and_latest_price(ticker, api_key)
+        print(f"Ticker: {ticker}. Date: {date}")
         dates.append(date)
         ticker_and_price = {
             'Ticker': ticker,
