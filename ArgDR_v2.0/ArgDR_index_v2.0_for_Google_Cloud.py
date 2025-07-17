@@ -85,9 +85,28 @@ cap_bursatiles_25_feb_25 = {
     'Edenor ADR' :                      1623461084
 }
 
+cap_bursatiles_16_jul_25 = {
+    'YPF Sociedad Anonima' :            12102234641,         
+    'Grupo Supervielle' :               889238357,                  
+    'Grupo Financiero Galicia ADR' :    7465867337,                 
+    'BBVA Argentina' :                  3005342937,                    
+    'Banco Macro B ADR' :               4078498436,                    
+    'Telecom Argentina ADR' :           3848640474,                    
+    'Cresud SACIF' :                    644063746,                    
+    'Central Puerto' :                  1712056372,                    
+    'Pampa Energia ADR' :               3840171311,                    
+    'Loma Negra ADR' :                  1220646750,                    
+    'IRSA ADR' :                        1086066840,                    
+    'Transportadora Gas ADR' :          3863169760,                    
+    'Bioceres Crop' :                   240709690,                   
+    'Edenor ADR' :                      1112447021                    
+}
+
+
+
 # Seleccionar el diccionario más reciente de 
 # capitalizaciones bursátiles
-cap_bursatiles = cap_bursatiles_25_feb_25
+cap_bursatiles = cap_bursatiles_16_jul_25
 
 suma_cap = sum(cap_bursatiles.values())
 
@@ -108,6 +127,10 @@ tickers_y_ponderadores
 # Este script "hereda" el ajuste de encadenamiento
 # a fecha febrero de 2025 del script 'ArgDR_index_v1.0.ipynb'
 chain_adjustment_feb_25 = 0.911886396417253
+# Update 2025-07-17: al haber nuevos ponderadores, se actualiza
+# el chain adjustment (ver reponderación en:
+# https://github.com/andres-fern/argdr/blob/main/ArgDR_v2.0/ArgDR_index_v2.0_for_Google_Cloud.ipynb)
+chain_adjustment_jul_25 = 0.9087699742721543
 
 # %%
 def get_data_from_api(ticker:str, function='TIME_SERIES_INTRADAY'):
@@ -158,7 +181,7 @@ def calculo_indice(df:pd.DataFrame, chain_adjustment):
     return ArgDR_Index
 
 # %%
-valor = calculo_indice(df,chain_adjustment_feb_25)
+valor = calculo_indice(df,chain_adjustment_jul_25)
 
 # %%
 fecha = dates[-1]
