@@ -177,7 +177,7 @@ def argdr_index(request):
     df_rows = []
     for ticker in tickers_list:
         date, closing_price = get_date_and_latest_price(ticker, api_key)
-        print(f"Ticker: {ticker}. Date: {date}")
+        print(f"Ticker: {ticker}. Date: {date}. Closing price: {closing_price}")
         dates.append(date)
         ticker_and_price = {
             'Ticker': ticker,
