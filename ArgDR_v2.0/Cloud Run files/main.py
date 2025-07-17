@@ -136,23 +136,24 @@ def argdr_index(request):
     }
     
     cap_bursatiles = {
-        'YPF Sociedad Anonima': 13946871640,
-        'Grupo Supervielle': 1233150264,
-        'Grupo Financiero Galicia ADR': 8523720280,
-        'BBVA Argentina': 3843734562,
-        'Banco Macro B ADR': 5493200605,
-        'Telecom Argentina ADR': 5272228248,
-        'Cresud SACIF': 633031172,
-        'Central Puerto': 1881929669,
-        'Pampa Energia ADR': 4208906073,
-        'Loma Negra ADR': 1295332593,
-        'IRSA ADR': 1042296329,
-        'Transportadora Gas ADR': 3894785724,
-        'Bioceres Crop': 276407628,
-        'Edenor ADR': 1623461084
+        'YPF Sociedad Anonima' :            12102234641,         
+        'Grupo Supervielle' :               889238357,                  
+        'Grupo Financiero Galicia ADR' :    7465867337,                 
+        'BBVA Argentina' :                  3005342937,                    
+        'Banco Macro B ADR' :               4078498436,                    
+        'Telecom Argentina ADR' :           3848640474,                    
+        'Cresud SACIF' :                    644063746,                    
+        'Central Puerto' :                  1712056372,                    
+        'Pampa Energia ADR' :               3840171311,                    
+        'Loma Negra ADR' :                  1220646750,                    
+        'IRSA ADR' :                        1086066840,                    
+        'Transportadora Gas ADR' :          3863169760,                    
+        'Bioceres Crop' :                   240709690,                   
+        'Edenor ADR' :                      1112447021                    
     }
     
-    chain_adjustment_feb_25 = 0.911886396417253
+    #chain_adjustment_feb_25 = 0.911886396417253
+    chain_adjustment_jul_25 = 0.9087699742721543
     
     # Get API key from Secret Manager
     project_id = "562376856357" 
@@ -187,7 +188,7 @@ def argdr_index(request):
     
     # Create DataFrame and calculate index
     df = pd.DataFrame(df_rows)
-    valor = calculo_indice(df, chain_adjustment_feb_25)
+    valor = calculo_indice(df, chain_adjustment_jul_25)
     fecha = dates[-1]
     
     # Add to BigQuery
