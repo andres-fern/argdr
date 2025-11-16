@@ -135,25 +135,26 @@ def argdr_index(request):
         'Edenor ADR': 'EDN'
     }
     
-    cap_bursatiles = {
-        'YPF Sociedad Anonima' :            12102234641,         
-        'Grupo Supervielle' :               889238357,                  
-        'Grupo Financiero Galicia ADR' :    7465867337,                 
-        'BBVA Argentina' :                  3005342937,                    
-        'Banco Macro B ADR' :               4078498436,                    
-        'Telecom Argentina ADR' :           3848640474,                    
-        'Cresud SACIF' :                    644063746,                    
-        'Central Puerto' :                  1712056372,                    
-        'Pampa Energia ADR' :               3840171311,                    
-        'Loma Negra ADR' :                  1220646750,                    
-        'IRSA ADR' :                        1086066840,                    
-        'Transportadora Gas ADR' :          3863169760,                    
-        'Bioceres Crop' :                   240709690,                   
-        'Edenor ADR' :                      1112447021                    
+    cap_bursatiles_14_nov_25 = {
+        'YPF Sociedad Anonima' :            15209405705,         
+        'Grupo Supervielle' :               1053201670,                
+        'Grupo Financiero Galicia ADR' :    8482625948,                
+        'BBVA Argentina' :                  3186092411,                   
+        'Banco Macro B ADR' :               5297540102,                   
+        'Telecom Argentina ADR' :           5651277338,                   
+        'Cresud SACIF' :                    714168376,                  
+        'Central Puerto' :                  2260435234,                   
+        'Pampa Energia ADR' :               4898516216,                   
+        'Loma Negra ADR' :                  1379354167,                   
+        'IRSA ADR' :                        1218508222,                   
+        'Transportadora Gas ADR' :          4594853510,                   
+        'Bioceres Crop' :                   106223442,                 
+        'Edenor ADR' :                      1465284669                  
     }
     
     #chain_adjustment_feb_25 = 0.911886396417253
-    chain_adjustment_jul_25 = 0.9087699742721543
+    #chain_adjustment_jul_25 = 0.9087699742721543
+    chain_adjustment_nov_25  = 0.9040345402404493
     
     # Get API key from Secret Manager
     project_id = "562376856357" 
@@ -188,7 +189,7 @@ def argdr_index(request):
     
     # Create DataFrame and calculate index
     df = pd.DataFrame(df_rows)
-    valor = calculo_indice(df, chain_adjustment_jul_25)
+    valor = calculo_indice(df, chain_adjustment_nov_25)
     fecha = dates[-1]
     
     # Add to BigQuery
